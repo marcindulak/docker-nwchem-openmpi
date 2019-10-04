@@ -1,0 +1,13 @@
+version: '3'
+services:
+  sut:
+    build: .
+    command:
+      - /bin/bash
+      - -c
+      - |
+        . /etc/profile.d/modules.sh
+        module use /usr/share/modulefiles
+        module load mpi/openmpi-x86_64
+        echo -e "geometry\nH 0 0 0\nH 0 0 1\nend\nbasis\nH library STO-3G\nend\ntask dft energy" > /tmp/h2.nw        
+        mpiexec --allow-run-as-root -np 1 nwchem_openmpi /tmp/h2.nw
