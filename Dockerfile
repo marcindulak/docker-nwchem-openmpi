@@ -8,7 +8,9 @@ ENV FEDORA_RELEASE 6.fc32
 ENV FEDORA_ARCH x86_64
 
 RUN set -x \
-    && dnf install -y nwchem-openmpi-${NWCHEM_VERSION}-${FEDORA_RELEASE}.${FEDORA_ARCH} \
+    && dnf install -y \
+       nwchem-openmpi-${NWCHEM_VERSION}-${FEDORA_RELEASE}.${FEDORA_ARCH} \
+       nwchem-${NWCHEM_VERSION}-${FEDORA_RELEASE}.${FEDORA_ARCH} \
     && dnf clean all
 
 CMD ["/bin/bash"]

@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/marcindulak/docker-nwchem-openmpi.svg?branch=master)](https://travis-ci.org/marcindulak/docker-nwchem-openmpi)
+![main](https://github.com/marcindulak/docker-nwchem-openmpi/workflows/main/badge.svg)
 
 # Description
 
@@ -36,7 +36,7 @@ You have two choices, listed below.
 ## Run a job with docker-compose
 
 ```sh
-docker-compose -f docker-compose.myjob.yml up
+docker-compose -f docker-compose.myjob.yml up --exit-code-from nwchem
 ```
 
 Remove the terminated container
