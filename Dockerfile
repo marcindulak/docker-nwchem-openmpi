@@ -1,6 +1,6 @@
 # Discover the sha by removing the @sha part and running: timeout 5 docker buildx build --pull --no-cache .
-# Dockerhub does not show the overall sha https://github.com/docker/roadmap/issues/262
-FROM fedora:39@sha256:ee16ca86648f857c68270514442953c808c61c416152b9a316e551b02bedf8ec
+# Alternatively find the sha in Dockerhub UI https://github.com/docker/roadmap/issues/262
+FROM fedora:40@sha256:d0207dbb078ee261852590b9a8f1ab1f8320547be79a2f39af9f3d23db33735e
 
 # https://docs.docker.com/engine/reference/builder/#automatic-platform-args-in-the-global-scope
 ARG TARGETPLATFORM
@@ -13,8 +13,8 @@ RUN echo uname -m $(uname -m)
 LABEL name="NWCHEM Openmpi" \
       url="http://www.nwchem-sw.org/"
 
-ENV NWCHEM_VERSION 7.2.2
-ENV FEDORA_RELEASE 1.fc39
+ENV NWCHEM_VERSION 7.2.3
+ENV FEDORA_RELEASE 1.fc40
 
 RUN set -x \
     && dnf install -y \

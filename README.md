@@ -36,13 +36,13 @@ You have two choices, listed below.
 ## Run a job with docker-compose
 
 ```sh
-docker-compose -f docker-compose.myjob.yml up --exit-code-from nwchem
+docker compose -f docker-compose.myjob.yml up --exit-code-from nwchem
 ```
 
 Remove the terminated container
 
 ```sh
-docker-compose -f docker-compose.myjob.yml down
+docker compose -f docker-compose.myjob.yml down
 ```
 
 ## Run a job manually
